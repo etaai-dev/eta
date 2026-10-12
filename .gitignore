@@ -1,0 +1,5 @@
+.temp/
+/target/
+/.direnv/
+/result
+/result-*

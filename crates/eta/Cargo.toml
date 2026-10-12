@@ -1,0 +1,22 @@
+[package]
+name = "eta"
+description = "A pure Rust framework for machine learning, deep learning, and reinforcement learning"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[features]
+default = ["ml", "nn", "rl"]
+ml = ["dep:eta-ml"]
+nn = ["dep:eta-nn"]
+rl = ["dep:eta-rl"]
+
+[dependencies]
+eta-core.workspace = true
+eta-ml = { workspace = true, optional = true }
+eta-nn = { workspace = true, optional = true }
+eta-rl = { workspace = true, optional = true }
+
+[lints]
+workspace = true

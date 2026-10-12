@@ -1,0 +1,26 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+
+[workspace.dependencies]
+eta-core = { path = "crates/eta-core" }
+eta-ml = { path = "crates/eta-ml" }
+eta-nn = { path = "crates/eta-nn" }
+eta-rl = { path = "crates/eta-rl" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"
+
+[workspace.lints.clippy]
+all = "warn"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
